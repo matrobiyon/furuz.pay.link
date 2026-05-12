@@ -1,0 +1,16 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "tj.furuz.pay",
+      "sha256_cert_fingerprints": [
+        "D8:48:69:14:DC:7A:82:AB:A4:C5:E6:C8:40:70:2E:48:05:0C:AF:43:C5:D8:12:FB:13:B7:F9:7D:36:BE:9D:CE",
+        "1B:0B:4E:86:8D:47:A8:51:E0:C8:A1:96:AB:A7:CB:B7:59:CC:BE:6C:50:ED:94:26:AD:9F:FD:9D:14:80:8B:52"
+      ]
+    }
+  }
+]
