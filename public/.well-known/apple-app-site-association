@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "474CXBBNZH.furuzpay.Furuz"
+        ],
+        "components": [
+          {
+            "/": "/home"
+          }
+        ]
+      }
+    ]
+  }
+}
