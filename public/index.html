@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tg">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#102b59">
-  <meta name="description" content="FuruzPay - Your everyday banking, always at hand. Download the mobile app.">
-  <title>FuruzPay | Banking made simple</title>
+
+  <title>FuruzPay | Пардохтҳои мобилӣ</title>
 
   <style>
     :root {
@@ -25,8 +25,7 @@
     }
 
     body {
-      font-family: Inter, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", Arial, sans-serif;
+      font-family: Arial, sans-serif;
       color: var(--text);
       background: white;
       line-height: 1.6;
@@ -38,60 +37,78 @@
     }
 
     .container {
-      width: min(1160px, calc(100% - 48px));
+      width: min(1160px, calc(100% - 40px));
       margin: auto;
     }
 
     /* HEADER */
 
     header {
+      padding: 18px 0;
       background: white;
-      padding: 20px 0;
     }
 
     .nav {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      gap: 20px;
     }
 
     .logo {
-      font-size: 30px;
+      font-size: 29px;
       font-weight: 900;
       color: var(--navy);
-      letter-spacing: -1.5px;
+      letter-spacing: -1px;
     }
 
     .logo span {
       color: var(--gold);
     }
 
-    .nav-link {
-      color: var(--navy);
-      font-weight: 600;
-      font-size: 14px;
+    .languages {
+      display: flex;
+      gap: 6px;
+      background: var(--bg);
+      padding: 5px;
+      border-radius: 12px;
+    }
+
+    .lang-btn {
+      border: 0;
+      background: transparent;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .lang-btn.active {
+      background: var(--navy);
+      color: white;
     }
 
     /* HERO */
 
     .hero {
       background:
-        radial-gradient(circle at 80% 40%, #34558a 0%, transparent 35%),
+        radial-gradient(circle at 80% 40%, #34558a, transparent 40%),
         linear-gradient(120deg, #102b59, #1c3665);
-      border-radius: 28px;
+      border-radius: 25px;
       color: white;
-      margin: 12px auto 80px;
+      margin: 12px auto 75px;
       overflow: hidden;
-      position: relative;
     }
 
     .hero-inner {
-      min-height: 490px;
+      min-height: 470px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
-      padding: 65px 75px;
-      gap: 30px;
+      gap: 35px;
+      padding: 55px 65px;
     }
 
     .eyebrow {
@@ -104,9 +121,9 @@
     }
 
     .hero h1 {
-      font-size: clamp(38px, 5vw, 60px);
-      line-height: 1.1;
-      letter-spacing: -2px;
+      font-size: clamp(38px, 5vw, 58px);
+      line-height: 1.12;
+      letter-spacing: -1.5px;
       margin-bottom: 22px;
     }
 
@@ -114,12 +131,14 @@
       color: var(--gold);
     }
 
-    .hero-description {
+    .description {
       color: #dce5f5;
       font-size: 17px;
-      max-width: 470px;
-      margin-bottom: 34px;
+      max-width: 480px;
+      margin-bottom: 32px;
     }
+
+    /* STORE BUTTONS */
 
     .download-buttons {
       display: flex;
@@ -133,19 +152,19 @@
       gap: 11px;
       background: white;
       color: #151515;
-      padding: 12px 19px;
-      border-radius: 12px;
-      min-width: 190px;
-      transition: transform .2s, background .2s;
+      padding: 11px 18px;
+      border-radius: 11px;
+      min-width: 185px;
+      transition: .2s;
     }
 
     .store-button:hover {
-      transform: translateY(-4px);
-      background: #f0ca49;
+      transform: translateY(-3px);
+      background: var(--gold);
     }
 
     .store-icon {
-      font-size: 29px;
+      font-size: 28px;
       line-height: 1;
     }
 
@@ -157,125 +176,37 @@
 
     .store-text strong {
       display: block;
-      font-size: 16px;
-      line-height: 1.4;
+      font-size: 15px;
     }
 
-    /* PHONE MOCKUP */
+    /* REAL APP IMAGE */
 
-    .visual {
+    .app-visual {
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 380px;
-      position: relative;
+      min-height: 340px;
     }
 
-    .glow {
-      position: absolute;
-      width: 310px;
-      height: 310px;
-      background: #f0ca49;
-      opacity: .13;
-      filter: blur(75px);
-      border-radius: 50%;
-    }
-
-    .phone {
-      width: 235px;
-      height: 420px;
-      border: 8px solid #111a2b;
-      border-radius: 38px;
-      background: #f8faff;
-      position: relative;
-      z-index: 1;
-      padding: 25px 15px;
-      box-shadow: 0 30px 65px #0006;
-      transform: rotate(-5deg);
-      color: var(--navy);
-    }
-
-    .phone-notch {
-      position: absolute;
-      width: 85px;
-      height: 19px;
-      background: #111a2b;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 0 0 14px 14px;
-    }
-
-    .phone-brand {
-      font-size: 17px;
-      font-weight: 900;
-      margin-top: 7px;
-    }
-
-    .balance {
-      background: var(--navy);
-      color: white;
-      border-radius: 15px;
-      padding: 17px;
-      margin-top: 20px;
-    }
-
-    .balance small {
-      color: #c8d4e8;
-    }
-
-    .balance h3 {
-      font-size: 25px;
-      margin-top: 7px;
-    }
-
-    .phone-label {
-      font-weight: 700;
-      margin: 20px 0 12px;
-      font-size: 13px;
-    }
-
-    .phone-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-    }
-
-    .phone-item {
-      background: #e8eef8;
-      border-radius: 10px;
-      padding: 12px 3px;
-      text-align: center;
-      font-size: 10px;
-      font-weight: 600;
-    }
-
-    .phone-item span {
+    .app-visual img {
       display: block;
-      font-size: 22px;
-      margin-bottom: 5px;
-    }
-
-    .phone-card {
-      background: linear-gradient(120deg, #1c3665, #34558a);
-      border-radius: 12px;
-      height: 70px;
-      margin-top: 19px;
-      color: white;
-      padding: 12px;
-      font-size: 11px;
+      width: 100%;
+      max-width: 480px;
+      max-height: 390px;
+      object-fit: contain;
+      border-radius: 15px;
     }
 
     /* FEATURES */
 
     .section {
-      padding: 25px 0 90px;
+      padding: 20px 0 85px;
     }
 
     .section-heading {
       text-align: center;
-      max-width: 600px;
-      margin: 0 auto 45px;
+      max-width: 650px;
+      margin: 0 auto 42px;
     }
 
     .section-heading small {
@@ -287,8 +218,8 @@
 
     .section-heading h2 {
       font-size: 36px;
-      letter-spacing: -1px;
       margin: 10px 0;
+      line-height: 1.2;
     }
 
     .section-heading p {
@@ -303,24 +234,24 @@
 
     .feature {
       background: var(--bg);
-      padding: 28px 23px;
+      padding: 27px 22px;
       border-radius: 18px;
-      transition: transform .2s;
+      transition: .2s;
     }
 
     .feature:hover {
-      transform: translateY(-6px);
+      transform: translateY(-5px);
     }
 
     .feature-icon {
-      width: 53px;
-      height: 53px;
-      border-radius: 15px;
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
       background: #fff1c5;
       display: grid;
       place-items: center;
-      font-size: 25px;
-      margin-bottom: 20px;
+      font-size: 24px;
+      margin-bottom: 18px;
     }
 
     .feature h3 {
@@ -336,15 +267,15 @@
     /* DOWNLOAD CTA */
 
     .cta {
-      background: #f4f6fa;
-      padding: 70px 25px;
+      background: var(--bg);
+      padding: 65px 25px;
       text-align: center;
       border-radius: 24px;
-      margin-bottom: 80px;
+      margin-bottom: 75px;
     }
 
     .cta h2 {
-      font-size: 34px;
+      font-size: 33px;
       margin-bottom: 12px;
     }
 
@@ -368,13 +299,12 @@
     .footer-grid {
       display: grid;
       grid-template-columns: 1.2fr 1fr 1fr 1fr;
-      gap: 35px;
-      margin-bottom: 45px;
+      gap: 30px;
+      margin-bottom: 40px;
     }
 
     .footer-logo {
-      color: white;
-      font-size: 31px;
+      font-size: 30px;
       font-weight: 900;
       margin-bottom: 12px;
     }
@@ -384,8 +314,8 @@
     }
 
     .footer-column h4 {
-      margin-bottom: 15px;
       color: var(--gold);
+      margin-bottom: 13px;
     }
 
     .footer-column p,
@@ -403,21 +333,21 @@
     .copyright {
       border-top: 1px solid #ffffff20;
       padding-top: 22px;
+      text-align: center;
       color: #8e9bb0;
       font-size: 13px;
-      text-align: center;
     }
 
-    /* MOBILE */
+    /* RESPONSIVE */
 
     @media (max-width: 850px) {
       .hero-inner {
         grid-template-columns: 1fr;
         text-align: center;
-        padding: 55px 30px 35px;
+        padding: 50px 30px 30px;
       }
 
-      .hero-description {
+      .description {
         margin-left: auto;
         margin-right: auto;
       }
@@ -426,8 +356,12 @@
         justify-content: center;
       }
 
-      .visual {
-        min-height: 440px;
+      .app-visual {
+        min-height: 250px;
+      }
+
+      .app-visual img {
+        max-height: 300px;
       }
 
       .features {
@@ -444,20 +378,29 @@
         width: calc(100% - 28px);
       }
 
+      .logo {
+        font-size: 24px;
+      }
+
+      .lang-btn {
+        padding: 7px 9px;
+        font-size: 12px;
+      }
+
       .hero {
-        border-radius: 20px;
+        border-radius: 18px;
         margin-bottom: 55px;
       }
 
       .hero-inner {
-        padding: 45px 19px 20px;
+        padding: 42px 19px 25px;
       }
 
       .hero h1 {
-        font-size: 39px;
+        font-size: 38px;
       }
 
-      .hero-description {
+      .description {
         font-size: 15px;
       }
 
@@ -474,13 +417,13 @@
         font-size: 29px;
       }
 
+      .cta h2 {
+        font-size: 27px;
+      }
+
       .footer-grid {
         grid-template-columns: 1fr;
         gap: 25px;
-      }
-
-      .cta h2 {
-        font-size: 28px;
       }
     }
   </style>
@@ -490,37 +433,48 @@
 
 <header>
   <div class="container nav">
+
     <a href="#" class="logo">FURUZ<span>PAY</span></a>
-    <a href="#download" class="nav-link">Download the app ↓</a>
+
+    <div class="languages">
+      <button class="lang-btn active" data-lang="tg">ТҶ</button>
+      <button class="lang-btn" data-lang="ru">РУ</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+
   </div>
 </header>
 
 <main>
 
   <!-- HERO -->
+
   <section class="container hero">
     <div class="hero-inner">
 
       <div>
-        <div class="eyebrow">Your money. Your freedom.</div>
+        <div class="eyebrow" data-i18n="eyebrow">
+          Молияи шумо. Озодии шумо.
+        </div>
 
-        <h1>
-          Banking made <span>simple.</span>
+        <h1 data-i18n="heroTitle">
+          Ҳамаи имкониятҳои бонкӣ дар <span>як ҷо.</span>
         </h1>
 
-        <p class="hero-description">
-          Manage your everyday financial tasks in one place.
-          Send transfers, make payments and stay in control
-          of your money, anytime, anywhere.
+        <p class="description" data-i18n="heroDescription">
+          Бо FuruzPay маблағ интиқол диҳед, хизматрасониҳоро пардохт кунед
+          ва маблағҳои худро дар смартфон идора намоед.
         </p>
 
         <div class="download-buttons">
+
           <a class="store-button"
              href="https://apps.apple.com/app/idYOUR_APP_ID"
              target="_blank" rel="noopener noreferrer">
+
             <span class="store-icon"></span>
             <span class="store-text">
-              <small>Download on the</small>
+              <small data-i18n="appleSmall">Download on the</small>
               <strong>App Store</strong>
             </span>
           </a>
@@ -528,61 +482,41 @@
           <a class="store-button"
              href="https://play.google.com/store/apps/details?id=YOUR_APP_ID"
              target="_blank" rel="noopener noreferrer">
+
             <span class="store-icon">▶</span>
             <span class="store-text">
               <small>GET IT ON</small>
               <strong>Google Play</strong>
             </span>
           </a>
+
         </div>
       </div>
 
-      <!-- CSS PHONE MOCKUP -->
-      <div class="visual">
-        <div class="glow"></div>
-
-        <div class="phone">
-          <div class="phone-notch"></div>
-
-          <div class="phone-brand">FURUZ PAY</div>
-
-          <div class="balance">
-            <small>Your balance</small>
-            <h3>5,630.00</h3>
-            <small>TJS</small>
-          </div>
-
-          <div class="phone-label">Quick services</div>
-
-          <div class="phone-grid">
-            <div class="phone-item"><span>↗</span>Transfers</div>
-            <div class="phone-item"><span>▣</span>Payments</div>
-            <div class="phone-item"><span>💳</span>Cards</div>
-            <div class="phone-item"><span>⌂</span>Services</div>
-            <div class="phone-item"><span>◈</span>History</div>
-            <div class="phone-item"><span>☆</span>More</div>
-          </div>
-
-          <div class="phone-card">
-            <strong>FURUZ</strong>
-            <div style="margin-top:13px;letter-spacing:2px">
-              •••• •••• •••• 7295
-            </div>
-          </div>
-        </div>
+      <!-- YOUR OWN IMAGE -->
+      <div class="app-visual">
+        <img
+          src="app-preview.png"
+          alt="FuruzPay mobile application"
+        >
       </div>
 
     </div>
   </section>
 
   <!-- FEATURES -->
+
   <section class="container section">
+
     <div class="section-heading">
-      <small>One app. More possibilities.</small>
-      <h2>Everything you need, in one place.</h2>
-      <p>
-        Take care of your everyday financial needs
-        directly from your smartphone.
+      <small data-i18n="featuresEyebrow">FuruzPay</small>
+
+      <h2 data-i18n="featuresTitle">
+        Ҳама чиз барои шумо
+      </h2>
+
+      <p data-i18n="featuresDescription">
+        Хизматрасониҳои молиявии худро бо осонӣ идора кунед.
       </p>
     </div>
 
@@ -590,45 +524,51 @@
 
       <div class="feature">
         <div class="feature-icon">↗</div>
-        <h3>Money transfers</h3>
-        <p>Send money and manage your transfers conveniently.</p>
+        <h3 data-i18n="feature1Title">Интиқоли маблағ</h3>
+        <p data-i18n="feature1Desc">Интиқоли маблағ ба осонӣ ва қулай.</p>
       </div>
 
       <div class="feature">
         <div class="feature-icon">▣</div>
-        <h3>Easy payments</h3>
-        <p>Pay for everyday services from your mobile device.</p>
+        <h3 data-i18n="feature2Title">Пардохтҳо</h3>
+        <p data-i18n="feature2Desc">Пардохти хизматрасониҳои гуногун.</p>
       </div>
 
       <div class="feature">
         <div class="feature-icon">💳</div>
-        <h3>Card management</h3>
-        <p>Access your card services whenever you need them.</p>
+        <h3 data-i18n="feature3Title">Идоракунии кортҳо</h3>
+        <p data-i18n="feature3Desc">Хизматрасониҳои кортӣ дар смартфони шумо.</p>
       </div>
 
       <div class="feature">
         <div class="feature-icon">◷</div>
-        <h3>Available 24/7</h3>
-        <p>Access your everyday financial services anytime.</p>
+        <h3 data-i18n="feature4Title">24/7 дастрас</h3>
+        <p data-i18n="feature4Desc">Хизматрасониҳо дар вақти дилхоҳ.</p>
       </div>
 
     </div>
   </section>
 
-  <!-- DOWNLOAD -->
+  <!-- DOWNLOAD CTA -->
+
   <section class="container cta" id="download">
-    <h2>Your banking is always at hand.</h2>
-    <p>
-      Download FuruzPay and enjoy convenient mobile banking.
+
+    <h2 data-i18n="ctaTitle">
+      FuruzPay ҳамеша дар дасти шумост.
+    </h2>
+
+    <p data-i18n="ctaDescription">
+      Замимаро зеркашӣ кунед ва аз хизматрасониҳои мобилӣ истифода баред.
     </p>
 
     <div class="download-buttons">
+
       <a class="store-button"
          href="https://apps.apple.com/app/idYOUR_APP_ID"
          target="_blank" rel="noopener noreferrer">
         <span class="store-icon"></span>
         <span class="store-text">
-          <small>Download on the</small>
+          <small data-i18n="appleSmall">Download on the</small>
           <strong>App Store</strong>
         </span>
       </a>
@@ -642,12 +582,14 @@
           <strong>Google Play</strong>
         </span>
       </a>
+
     </div>
   </section>
 
 </main>
 
 <!-- FOOTER -->
+
 <footer>
   <div class="container">
 
@@ -655,39 +597,169 @@
 
       <div>
         <div class="footer-logo">FURUZ<span>PAY</span></div>
-        <p style="color:#b8c4d8;font-size:14px">
-          Your everyday banking, always at hand.
+        <p data-i18n="footerDescription">
+          Хизматрасониҳои молиявӣ ҳамеша дар дасти шумо.
         </p>
       </div>
 
       <div class="footer-column">
-        <h4>Contact us</h4>
+        <h4 data-i18n="contactTitle">Тамос</h4>
         <a href="tel:7272">7272</a>
         <a href="tel:+992446407272">+992 44 640 72 72</a>
-        <p>For calls from anywhere in the world</p>
+        <p data-i18n="contactDescription">
+          Барои зангҳо аз дохили Тоҷикистон
+        </p>
       </div>
 
       <div class="footer-column">
-        <h4>Online inquiries</h4>
+        <h4 data-i18n="onlineTitle">Дархостҳои онлайн</h4>
         <a href="mailto:bovari@furuz.tj">bovari@furuz.tj</a>
-        <p>Hotline: +992 44 600 15 20</p>
+        <p>+992 44 600 15 20</p>
       </div>
 
       <div class="footer-column">
-        <h4>Our address</h4>
-        <p>Bokhtar, Ayni Street 27</p>
-        <h4 style="margin-top:20px">Follow us</h4>
-        <a href="#">Social media</a>
+        <h4 data-i18n="addressTitle">Суроға</h4>
+        <p data-i18n="addressDescription">
+          ш. Бохтар, кӯчаи Айнӣ 27
+        </p>
+        <h4 data-i18n="socialTitle">Моро пайгирӣ кунед</h4>
       </div>
 
     </div>
 
     <div class="copyright">
-      © 2026 FuruzPay. All rights reserved.
+      © 2026 FuruzPay. <span data-i18n="copyright">Ҳамаи ҳуқуқҳо ҳифз шудаанд.</span>
     </div>
 
   </div>
 </footer>
+
+<script>
+
+const translations = {
+
+  tg: {
+    title: "FuruzPay | Пардохтҳои мобилӣ",
+    eyebrow: "Молияи шумо. Озодии шумо.",
+    heroTitle: "Ҳамаи имкониятҳои бонкӣ дар <span>як ҷо.</span>",
+    heroDescription: "Бо FuruzPay маблағ интиқол диҳед, хизматрасониҳоро пардохт кунед ва маблағҳои худро дар смартфон идора намоед.",
+    appleSmall: "Download on the",
+    featuresEyebrow: "FuruzPay",
+    featuresTitle: "Ҳама чиз барои шумо",
+    featuresDescription: "Хизматрасониҳои молиявии худро бо осонӣ идора кунед.",
+    feature1Title: "Интиқоли маблағ",
+    feature1Desc: "Интиқоли маблағ ба осонӣ ва қулай.",
+    feature2Title: "Пардохтҳо",
+    feature2Desc: "Пардохти хизматрасониҳои гуногун.",
+    feature3Title: "Идоракунии кортҳо",
+    feature3Desc: "Хизматрасониҳои кортӣ дар смартфони шумо.",
+    feature4Title: "24/7 дастрас",
+    feature4Desc: "Хизматрасониҳо дар вақти дилхоҳ.",
+    ctaTitle: "FuruzPay ҳамеша дар дасти шумост.",
+    ctaDescription: "Замимаро зеркашӣ кунед ва аз хизматрасониҳои мобилӣ истифода баред.",
+    footerDescription: "Хизматрасониҳои молиявӣ ҳамеша дар дасти шумо.",
+    contactTitle: "Тамос",
+    contactDescription: "Барои зангҳо аз дохили Тоҷикистон",
+    onlineTitle: "Дархостҳои онлайн",
+    addressTitle: "Суроға",
+    addressDescription: "ш. Бохтар, кӯчаи Айнӣ 27",
+    socialTitle: "Моро пайгирӣ кунед",
+    copyright: "Ҳамаи ҳуқуқҳо ҳифз шудаанд."
+  },
+
+  ru: {
+    title: "FuruzPay | Мобильный банкинг",
+    eyebrow: "Ваши финансы. Ваша свобода.",
+    heroTitle: "Все банковские возможности <span>в одном месте.</span>",
+    heroDescription: "Переводите деньги, оплачивайте услуги и управляйте своими финансами прямо со смартфона с FuruzPay.",
+    appleSmall: "Загрузите в",
+    featuresEyebrow: "FuruzPay",
+    featuresTitle: "Всё необходимое в одном приложении",
+    featuresDescription: "Управляйте своими финансовыми услугами легко и удобно.",
+    feature1Title: "Денежные переводы",
+    feature1Desc: "Переводите деньги быстро и удобно.",
+    feature2Title: "Платежи",
+    feature2Desc: "Оплачивайте различные услуги.",
+    feature3Title: "Управление картами",
+    feature3Desc: "Управляйте карточными услугами со смартфона.",
+    feature4Title: "Доступно 24/7",
+    feature4Desc: "Пользуйтесь услугами в любое время.",
+    ctaTitle: "FuruzPay всегда под рукой.",
+    ctaDescription: "Скачайте приложение и пользуйтесь мобильными услугами.",
+    footerDescription: "Ваши финансовые услуги всегда под рукой.",
+    contactTitle: "Контакты",
+    contactDescription: "Звонки из Таджикистана",
+    onlineTitle: "Онлайн-обращения",
+    addressTitle: "Адрес",
+    addressDescription: "г. Бохтар, улица Айни, 27",
+    socialTitle: "Следите за нами",
+    copyright: "Все права защищены."
+  },
+
+  en: {
+    title: "FuruzPay | Mobile Banking",
+    eyebrow: "Your money. Your freedom.",
+    heroTitle: "All your banking needs <span>in one place.</span>",
+    heroDescription: "Transfer money, pay for services and manage your finances directly from your smartphone with FuruzPay.",
+    appleSmall: "Download on the",
+    featuresEyebrow: "FuruzPay",
+    featuresTitle: "Everything you need in one app",
+    featuresDescription: "Manage your everyday financial services easily and conveniently.",
+    feature1Title: "Money transfers",
+    feature1Desc: "Send money quickly and conveniently.",
+    feature2Title: "Payments",
+    feature2Desc: "Pay for a variety of services.",
+    feature3Title: "Card management",
+    feature3Desc: "Manage your card services from your smartphone.",
+    feature4Title: "Available 24/7",
+    feature4Desc: "Access your services whenever you need them.",
+    ctaTitle: "FuruzPay is always at hand.",
+    ctaDescription: "Download the app and enjoy convenient mobile services.",
+    footerDescription: "Your everyday financial services, always at hand.",
+    contactTitle: "Contact us",
+    contactDescription: "Calls from within Tajikistan",
+    onlineTitle: "Online inquiries",
+    addressTitle: "Address",
+    addressDescription: "Bokhtar, Ayni Street 27",
+    socialTitle: "Follow us",
+    copyright: "All rights reserved."
+  }
+
+};
+
+function setLanguage(lang) {
+  const dictionary = translations[lang];
+
+  document.documentElement.lang = lang;
+  document.title = dictionary.title;
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.dataset.i18n;
+    if (dictionary[key] !== undefined) {
+      element.innerHTML = dictionary[key];
+    }
+  });
+
+  document.querySelectorAll(".lang-btn").forEach(button => {
+    button.classList.toggle(
+      "active",
+      button.dataset.lang === lang
+    );
+  });
+
+  localStorage.setItem("furuzpay-language", lang);
+}
+
+document.querySelectorAll(".lang-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    setLanguage(button.dataset.lang);
+  });
+});
+
+const savedLanguage = localStorage.getItem("furuzpay-language");
+setLanguage(savedLanguage && translations[savedLanguage] ? savedLanguage : "tg");
+
+</script>
 
 </body>
 </html>
